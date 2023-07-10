@@ -13,7 +13,7 @@ export default function RestCard({restaurant}) {
 const styles = StyleSheet.create({
     image: {
         width: '100%',
-        height: 100,
+        height: 128,
         borderRadius: 12
     },
     card: {

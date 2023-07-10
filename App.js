@@ -1,14 +1,22 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import RestList from './app/RestList';
+import Tray from './app/Tray';
 
 export default function App() {
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Lunch Spot</Text>
-      <RestList />
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <View style={styles.container}>
+        <Text style={styles.header}>Lunch Spot</Text>
+        <RestList />
+        <StatusBar style="auto" />
+      </View>
+      <Tray setSelectedRestaurant={setSelectedRestaurant}/>
+    </>
+
   );
 }
 
