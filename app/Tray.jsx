@@ -8,7 +8,7 @@ export default function Tray({setSelectedRestaurant}) {
     }
 
     const reset = () => {
-        setSelectedRestaurant(undefined)
+        setSelectedRestaurant(null)
     }
 
     return (
