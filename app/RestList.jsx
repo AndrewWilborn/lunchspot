@@ -15,7 +15,7 @@ export default function RestList({ selectedRestaurant }) {
     return (
         <>
             <ScrollView style={styles.scrollingList}>
-                {!restaurants
+                {!restaurantList
                     ? <Text style={styles.loadingText}>Loading...</Text>
                     : (selectedRestaurant)
                         ? <RestCard restaurant={restaurantList[Math.floor(selectedRestaurant * restaurantList.length)]} />

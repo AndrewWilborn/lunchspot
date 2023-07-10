@@ -7,16 +7,30 @@ export default function Tray({setSelectedRestaurant}) {
         setSelectedRestaurant(chosen)
     }
 
+    const reset = () => {
+        setSelectedRestaurant(undefined)
+    }
+
     return (
         <View style={styles.tray}>
-            <TouchableOpacity style={styles.button} onPress={choose}>
-                <Text style={styles.buttonText}>Shuffle</Text>
-            </TouchableOpacity>
+            <View style={styles.buttonList}>
+                <TouchableOpacity style={styles.button} onPress={choose}>
+                    <Text style={styles.buttonText}>Shuffle</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.button, styles.resetButton]} onPress={reset}>
+                    <Text style={styles.buttonText}>Reset</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    buttonList: {
+        flexDirection: 'row',
+        width: '80%',
+        justifyContent: "space-evenly"
+    },
     button: {
         backgroundColor: 'pink',
         paddingHorizontal: 24,
@@ -30,6 +44,9 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 20,
         fontWeight: 800
+    },
+    resetButton: {
+        backgroundColor: 'grey',
     },
     tray: {
         width: '100%',
