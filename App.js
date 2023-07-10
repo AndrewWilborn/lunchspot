@@ -11,7 +11,7 @@ export default function App() {
     <>
       <View style={styles.container}>
         <Text style={styles.header}>Lunch Spot</Text>
-        <RestList />
+        <RestList selectedRestaurant={selectedRestaurant}/>
         <StatusBar style="auto" />
       </View>
       <Tray setSelectedRestaurant={setSelectedRestaurant}/>

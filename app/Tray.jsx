@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 
-export default function Tray(setSelectedRestaurant) {
+export default function Tray({setSelectedRestaurant}) {
 
     const choose = () => {
         const chosen = Math.random()
-        setSelectedRestaurant()
+        setSelectedRestaurant(chosen)
     }
 
     return (
         <View style={styles.tray}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={choose}>
                 <Text style={styles.buttonText}>Shuffle</Text>
             </TouchableOpacity>
         </View>
